@@ -6,8 +6,6 @@ __author__ = 'Salvatore Carotenuto of StartupSolutions'
 
 from flask import Flask, render_template, request, Response, jsonify, url_for
 from flask_cors import CORS
-from flask_sqlalchemy import SQLAlchemy
-from flask_restless import APIManager, ProcessingException
 
 from db_handler import DBHandler
 
