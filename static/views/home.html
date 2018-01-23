@@ -1,0 +1,42 @@
+<div class="container" ng-controller="MainCtrl">
+    <div class="starter-template">
+        <h1>Flask + Bootstrap + AngularJS starter template</h1>
+        <p class="lead">Use this document as a way to quickly start any new project.
+            <br>All you get is this text and a mostly barebones HTML document.</p>
+    </div>
+    <div id="todoNew">
+		<hr/>
+        <h2>New Item</h2>
+        <form class="form-horizontal">
+			<br/>
+            <fieldset>
+                <div class="form-group">
+                    <label for="newitem_name" class="col-sm-1 control-label">Name</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="newitem_name" placeholder="enter name here" ng-model="newitem.name">
+                    </div>
+                    <label for="newitem_description" class="col-sm-1 control-label">Description</label>
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="newitem_description" placeholder="enter description here" ng-model="newitem.description">
+                    </div>
+				</div>
+			</fieldset>
+            <button class="btn btn-primary" ng-click="saveNewItem()">Save</button>
+            <hr/>
+		</form>
+    </div>
+	<!---->
+    <h1>Items list:</h1>
+    <div>
+        <ul>
+            <li ng-repeat="item in items">
+                <a href="#/todo/{{todo.id}}"><span class="todoTitle">{{todo.title}}</span></a> :
+                <span class="todoDescription">{{todo.description | filter:ellipsis:20}}</span> &nbsp;
+                <button class="button" ng-click="deleteTodo(todo)">X</button>
+            </li>
+        </ul>
+    </div>
+    <h2>count: {{todos.length}}</h2>
+    <h2>message: {{message}}</h2>
+    </div>
+    <!-- /.container -->
